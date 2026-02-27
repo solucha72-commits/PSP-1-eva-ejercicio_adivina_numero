@@ -39,6 +39,7 @@ private fun pantallaJuego(miviewModel: GameViewModel=viewModel()) {
         // 1. El mensaje (pistas mayor/menor)
         Text(text = estado.mensaje)
 
+
         // 2. Cuadro para escribir
         TextField(
             value = estado.numeroUsuario,
