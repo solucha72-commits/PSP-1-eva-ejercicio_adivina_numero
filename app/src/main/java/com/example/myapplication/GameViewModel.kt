@@ -6,12 +6,15 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
-class GameViewModel : ViewModel() {
-    private var numeroSecreto = Random.nextInt(1, 101)
+
+class GameViewModel(
+    private val numeroInicial: Int = Random.nextInt(1, 101)
+) : ViewModel() {
+
+    private var numeroSecreto = numeroInicial
 
     var estado by mutableStateOf(Estado_juego())
         private set
-
     fun numero_nuevo(nuevoValor: String) {
         estado = estado.copy(numeroUsuario = nuevoValor)
     }

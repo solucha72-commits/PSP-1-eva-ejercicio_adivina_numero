@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
 private fun pantallaJuego(miviewModel: GameViewModel=viewModel()) {
     val estado=miviewModel.estado
     Column(modifier = Modifier.padding(20.dp)) {
+        Spacer(modifier = Modifier.height(100.dp))
         // 1. El mensaje (pistas mayor/menor)
         Text(text = estado.mensaje)
 
@@ -45,7 +46,7 @@ private fun pantallaJuego(miviewModel: GameViewModel=viewModel()) {
             label = { Text("Escribe un número") }
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+
 
         // 3. Botón para jugar
         Button(onClick = { miviewModel.comprobar_numero() }) {
